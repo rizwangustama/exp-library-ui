@@ -1,0 +1,31 @@
+<div class="overflow-x-auto rounded-xl border border-gray-200 bg-white shadow-sm">
+  <table class="w-full text-left text-sm text-gray-500">
+    <thead class="bg-gray-50 text-xs uppercase text-gray-700">
+      <tr>
+        @for (col of columns; track col.field) {
+          <th scope="col" class="px-6 py-4 font-semibold whitespace-nowrap">
+            {{ col.header }}
+          </th>
+        }
+      </tr>
+    </thead>
+    <tbody class="divide-y divide-gray-200">
+      @for (row of data; track $index) {
+        <tr class="hover:bg-gray-50 transition-colors duration-200">
+          @for (col of columns; track col.field) {
+            <td class="px-6 py-4 whitespace-nowrap">
+              {{ row[col.field] }}
+            </td>
+          }
+        </tr>
+      }
+      @if (data.length === 0) {
+        <tr>
+          <td [colSpan]="columns.length" class="px-6 py-8 text-center text-gray-500">
+            No data available
+          </td>
+        </tr>
+      }
+    </tbody>
+  </table>
+</div>

@@ -3,6 +3,9 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
+    "paths": {
+      "exp-shared-ui": ["./dist/exp-shared-ui"]
+    },
     "noImplicitOverride": true,
     "noPropertyAccessFromIndexSignature": true,
     "noImplicitReturns": true,
@@ -19,5 +22,19 @@
     "strictInjectionParameters": true,
     "strictInputAccessModifiers": true
   },
-  "files": []
+  "files": [],
+  "references": [
+    {
+      "path": "./projects/exp-shared-ui/tsconfig.lib.json"
+    },
+    {
+      "path": "./projects/exp-shared-ui/tsconfig.spec.json"
+    },
+    {
+      "path": "./projects/showcase-app/tsconfig.app.json"
+    },
+    {
+      "path": "./projects/showcase-app/tsconfig.spec.json"
+    }
+  ]
 }
