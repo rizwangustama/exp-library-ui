@@ -1,64 +1,122 @@
-# ExpSharedUi
+<p align="center">
+  <img src="../../logo.png" alt="EXP Shared UI Logo" width="200"/>
+</p>
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 22.2.0.
+<h1 align="center">EXP Shared UI</h1>
 
-## Code scaffolding
+<p align="center">
+  Library komponen UI modern, fleksibel, dan responsif, dirancang khusus untuk ekosistem <b>Angular</b> dengan memanfaatkan keindahan dan utilitas dari <b>Tailwind CSS v4</b>.
+</p>
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+---
 
-```bash
-ng generate component component-name
-```
+## 🌟 Fitur Utama
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+- **Khusus Angular**: Komponen dirancang secara *native* menggunakan fitur terbaru Angular (Control Flow, Standalone Components/Imports).
+- **Berbasis Tailwind CSS**: Sepenuhnya dikembangkan menggunakan utilitas Tailwind CSS v4, membuatnya sangat mudah dikustomisasi.
+- **Ringan & Cepat**: Tanpa ketergantungan library pihak ketiga yang berat (kecuali set ikon bawaan).
+- **Aksesibilitas & Pengalaman Pengguna**: Mendukung efek *hover*, *focus*, dan indikator *disabled* dengan sangat baik.
 
-```bash
-ng generate --help
-```
+## 📦 Komponen Tersedia
 
-## Building
+Saat ini, `exp-shared-ui` menyediakan komponen-komponen berikut:
 
-To build the library, run:
+1. **ExpButton** (`<exp-button>`) - Tombol dengan dukungan berbagai varian (`primary`, `secondary`, `danger`, `ghost`) dan ukuran (`sm`, `md`, `lg`).
+2. **ExpInput** (`<exp-input>`) - Input teks standar dengan dukungan tipe `text`, `email`, `password`, `number`, serta dapat disisipkan *icon* di sisi kiri atau kanan.
+3. **ExpCheckbox** (`<exp-checkbox>`) - Kotak centang dengan kemudahan *two-way binding*.
+4. **ExpRadio** (`<exp-radio>`) - Tombol pilihan untuk memilih satu opsi di dalam grup.
+5. **ExpSelect** (`<exp-select>`) - *Dropdown* canggih dengan fitur pencarian (*searchable*), multi-pilihan (*multi-select*), dan *template* kustom (menerima `ng-template`).
+6. **ExpTable** (`<exp-table>`) - Tabel data dinamis yang sederhana dan modern.
+7. **ExpIcon** (`<exp-icon>`) - Pembungkus ikon fleksibel menggunakan `@tabler/icons-webfont` yang ukurannya dapat diubah-ubah sesuka hati.
 
-```bash
-ng build exp-shared-ui
-```
+---
 
-This command will compile your project, and the build artifacts will be placed in the `dist/` directory.
+## 🚀 Instalasi & Persiapan
 
-### Publishing the Library
+Pastikan Anda sudah menginstal Tailwind CSS v4 dan Tabler Icons di proyek aplikasi Angular Anda.
 
-Once the project is built, you can publish your library by following these steps:
-
-1. Navigate to the `dist` directory:
-
+1. **Install Tabler Icons** (jika belum):
    ```bash
-   cd dist/exp-shared-ui
+   npm install @tabler/icons-webfont
    ```
 
-2. Run the `npm publish` command to publish your library to the npm registry:
-   ```bash
-   npm publish
+2. **Tambahkan ke Global Styles** (`styles.css` atau `styles.scss` aplikasi Anda):
+   ```css
+   @import '@tabler/icons-webfont/tabler-icons.min.css';
+   @import 'tailwindcss';
+   
+   /* Pastikan Tailwind dapat memindai folder library ini */
+   @source '../../exp-shared-ui'; 
    ```
 
-## Running unit tests
+---
 
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
+## 💻 Panduan Penggunaan (Contoh)
 
-```bash
-ng test
+Karena library ini dibangun untuk Angular versi modern, Anda dapat langsung mengimpor komponen yang dibutuhkan ke dalam modul atau komponen *standalone* Anda.
+
+### 1. Button
+```html
+<exp-button variant="primary" size="lg">Simpan Data</exp-button>
 ```
 
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
+### 2. Input (dengan Icon)
+```html
+<exp-input type="email" placeholder="Alamat Email" iconPosition="left">
+  <!-- Sisipkan atribut "icon" pada elemen ikon Anda -->
+  <exp-icon icon name="mail" size="lg"></exp-icon>
+</exp-input>
 ```
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+### 3. Checkbox & Radio
+```html
+<exp-checkbox [(checked)]="isAgreed">Saya setuju</exp-checkbox>
 
-## Additional Resources
+<exp-radio name="gender" value="pria" [(selectedValue)]="gender">Pria</exp-radio>
+<exp-radio name="gender" value="wanita" [(selectedValue)]="gender">Wanita</exp-radio>
+```
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+### 4. Select (Multi-select & Searchable)
+```html
+<exp-select 
+  [options]="cityList" 
+  bindLabel="name" 
+  bindValue="id" 
+  [searchable]="true"
+  [multiple]="true"
+  placeholder="Pilih Kota..."
+  [(value)]="selectedCities">
+</exp-select>
+```
+
+### 5. Table
+```typescript
+// Di dalam class komponen
+columns = [
+  { field: 'id', header: 'ID' },
+  { field: 'name', header: 'Nama Lengkap' }
+];
+data = [
+  { id: 1, name: 'Budi Santoso' },
+  { id: 2, name: 'Siti Aminah' }
+];
+```
+```html
+<!-- Di dalam template -->
+<exp-table [columns]="columns" [data]="data"></exp-table>
+```
+
+### 6. Icon
+Mendukung ukuran standar (`xs` hingga `5xl`) maupun ukuran kustom dari Tailwind.
+```html
+<exp-icon name="home" size="3xl" class="text-blue-500"></exp-icon>
+```
+
+---
+
+## 🛠️ Pengembangan
+Untuk mengembangkan library ini, jalankan perintah berikut di workspace Anda:
+```bash
+ng build exp-shared-ui --watch
+```
+Lalu uji perubahannya melalui proyek pengujian Anda (misalnya `showcase-app`).
