@@ -4,14 +4,14 @@ on:
   release:
     types: [published]
   # Atau bisa juga trigger otomatis saat push tag 'v*':
-  # push:
-  #   tags:
-  #     - 'v*'
+  push:
+    tags:
+      - 'v*'
 
 jobs:
   build-and-publish:
     runs-on: ubuntu-latest
-    
+
     permissions:
       contents: read
       id-token: write
