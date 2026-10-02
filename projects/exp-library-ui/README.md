@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="../../logo.png" alt="EXP Shared UI Logo" width="200"/>
+  <img src="./logo.png" alt="EXP Shared UI Logo" width="200"/>
 </p>
 
 <h1 align="center">EXP Shared UI</h1>
@@ -19,7 +19,7 @@
 
 ## 📦 Komponen Tersedia
 
-Saat ini, `exp-shared-ui` menyediakan komponen-komponen berikut:
+Saat ini, `exp-library-ui` menyediakan komponen-komponen berikut:
 
 1. **ExpButton** (`<exp-button>`) - Tombol dengan dukungan berbagai varian (`primary`, `secondary`, `danger`, `ghost`) dan ukuran (`sm`, `md`, `lg`).
 2. **ExpInput** (`<exp-input>`) - Input teks standar dengan dukungan tipe `text`, `email`, `password`, `number`, serta dapat disisipkan *icon* di sisi kiri atau kanan.
@@ -46,7 +46,7 @@ Pastikan Anda sudah menginstal Tailwind CSS v4 dan Tabler Icons di proyek aplika
    @import 'tailwindcss';
    
    /* Pastikan Tailwind dapat memindai folder library ini */
-   @source '../../exp-shared-ui'; 
+   @source '../../exp-library-ui'; 
    ```
 
 ---
@@ -117,6 +117,6 @@ Mendukung ukuran standar (`xs` hingga `5xl`) maupun ukuran kustom dari Tailwind.
 ## 🛠️ Pengembangan
 Untuk mengembangkan library ini, jalankan perintah berikut di workspace Anda:
 ```bash
-ng build exp-shared-ui --watch
+ng build exp-library-ui --watch
 ```
 Lalu uji perubahannya melalui proyek pengujian Anda (misalnya `showcase-app`).

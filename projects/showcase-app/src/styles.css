@@ -2,4 +2,4 @@
 @import '@tabler/icons-webfont/dist/tabler-icons.min.css';
 
 @import 'tailwindcss';
-@source '../../exp-shared-ui';
+@source '../../exp-library-ui';

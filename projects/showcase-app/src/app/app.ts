@@ -1,6 +1,6 @@
 import { Component, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { ExpButton } from 'exp-shared-ui';
+import { ExpButton } from 'exp-library-ui';
 
 @Component({
   imports: [RouterOutlet, ExpButton],

@@ -30,9 +30,9 @@ jobs:
         run: npm ci
 
       - name: Build Angular Library
-        run: npx ng build exp-shared-ui
+        run: npx ng build exp-library-ui
 
       - name: Publish Package
-        run: npm publish ./dist/exp-shared-ui --access public --provenance
+        run: npm publish ./dist/exp-library-ui --access public --provenance
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}

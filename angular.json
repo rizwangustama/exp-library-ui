@@ -7,20 +7,20 @@
   },
   "newProjectRoot": "projects",
   "projects": {
-    "exp-shared-ui": {
+    "exp-library-ui": {
       "projectType": "library",
-      "root": "projects/exp-shared-ui",
-      "sourceRoot": "projects/exp-shared-ui/src",
+      "root": "projects/exp-library-ui",
+      "sourceRoot": "projects/exp-library-ui/src",
       "prefix": "lib",
       "architect": {
         "build": {
           "builder": "@angular/build:ng-packagr",
           "configurations": {
             "production": {
-              "tsConfig": "projects/exp-shared-ui/tsconfig.lib.prod.json"
+              "tsConfig": "projects/exp-library-ui/tsconfig.lib.prod.json"
             },
             "development": {
-              "tsConfig": "projects/exp-shared-ui/tsconfig.lib.json"
+              "tsConfig": "projects/exp-library-ui/tsconfig.lib.json"
             }
           },
           "defaultConfiguration": "production"
@@ -28,7 +28,7 @@
         "test": {
           "builder": "@angular/build:unit-test",
           "options": {
-            "tsConfig": "projects/exp-shared-ui/tsconfig.spec.json"
+            "tsConfig": "projects/exp-library-ui/tsconfig.spec.json"
           }
         }
       }

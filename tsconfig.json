@@ -4,7 +4,7 @@
   "compileOnSave": false,
   "compilerOptions": {
     "paths": {
-      "exp-shared-ui": ["./projects/exp-shared-ui/src/public-api.ts"]
+      "exp-library-ui": ["./projects/exp-library-ui/src/public-api.ts"]
     },
     "noImplicitOverride": true,
     "noPropertyAccessFromIndexSignature": true,
@@ -25,10 +25,10 @@
   "files": [],
   "references": [
     {
-      "path": "./projects/exp-shared-ui/tsconfig.lib.json"
+      "path": "./projects/exp-library-ui/tsconfig.lib.json"
     },
     {
-      "path": "./projects/exp-shared-ui/tsconfig.spec.json"
+      "path": "./projects/exp-library-ui/tsconfig.spec.json"
     },
     {
       "path": "./projects/showcase-app/tsconfig.app.json"
