@@ -1,21 +1,15 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { ExpSharedUi } from './exp-shared-ui';
+import { TestBed } from '@angular/core/testing';
+import { ExpButton } from './button/button';
 
-describe('ExpSharedUi', () => {
-  let component: ExpSharedUi;
-  let fixture: ComponentFixture<ExpSharedUi>;
-
+describe('ExpButton', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [ExpSharedUi],
+      imports: [ExpButton],
     }).compileComponents();
-
-    fixture = TestBed.createComponent(ExpSharedUi);
-    component = fixture.componentInstance;
-    await fixture.whenStable();
   });
 
   it('should create', () => {
-    expect(component).toBeTruthy();
+    const fixture = TestBed.createComponent(ExpButton);
+    expect(fixture.componentInstance).toBeTruthy();
   });
 });
