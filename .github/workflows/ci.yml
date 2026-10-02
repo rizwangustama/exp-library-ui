@@ -25,5 +25,8 @@ jobs:
     - name: Run tests
       run: npm run test
       
-    - name: Build
-      run: npm run build
+    - name: Build Library
+      run: npx ng build exp-shared-ui
+      
+    - name: Build Showcase App
+      run: npx ng build showcase-app
