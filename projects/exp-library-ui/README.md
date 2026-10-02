@@ -1,87 +1,128 @@
 <p align="center">
-  <img src="./logo.png" alt="EXP Shared UI Logo" width="200"/>
+  <img src="https://raw.githubusercontent.com/rizwangustama/exp-library-ui/main/projects/exp-library-ui/logo.png" alt="EXP Library UI Logo" width="200"/>
 </p>
 
-<h1 align="center">EXP Shared UI</h1>
+<h1 align="center">@rizwangustama/exp-library-ui</h1>
 
 <p align="center">
-  Library komponen UI modern, fleksibel, dan responsif, dirancang khusus untuk ekosistem <b>Angular</b> dengan memanfaatkan keindahan dan utilitas dari <b>Tailwind CSS v4</b>.
+  Library komponen UI modern, fleksibel, dan responsif untuk ekosistem <b>Angular</b>,
+  ditenagai <b>Tailwind CSS v4</b> dan <b>Tabler Icons</b>.
+</p>
+
+<p align="center">
+  <a href="https://www.npmjs.com/package/@rizwangustama/exp-library-ui">
+    <img src="https://img.shields.io/npm/v/@rizwangustama/exp-library-ui.svg" alt="NPM Version"/>
+  </a>
+  <a href="https://github.com/rizwangustama/exp-library-ui/actions/workflows/ci.yml">
+    <img src="https://github.com/rizwangustama/exp-library-ui/actions/workflows/ci.yml/badge.svg" alt="CI Status"/>
+  </a>
+  <img src="https://img.shields.io/badge/Angular-v22-red?logo=angular" alt="Angular v22"/>
+  <img src="https://img.shields.io/badge/Tailwind_CSS-v4-38bdf8?logo=tailwindcss" alt="Tailwind CSS v4"/>
 </p>
 
 ---
 
 ## 🌟 Fitur Utama
 
-- **Khusus Angular**: Komponen dirancang secara *native* menggunakan fitur terbaru Angular (Control Flow, Standalone Components/Imports).
-- **Berbasis Tailwind CSS**: Sepenuhnya dikembangkan menggunakan utilitas Tailwind CSS v4, membuatnya sangat mudah dikustomisasi.
-- **Ringan & Cepat**: Tanpa ketergantungan library pihak ketiga yang berat (kecuali set ikon bawaan).
-- **Aksesibilitas & Pengalaman Pengguna**: Mendukung efek *hover*, *focus*, dan indikator *disabled* dengan sangat baik.
+- **Khusus Angular Modern**: Komponen dibangun menggunakan fitur terbaru Angular seperti *Control Flow*, *Standalone Components*, dan *Signals*.
+- **Berbasis Tailwind CSS v4**: Mudah dikustomisasi menggunakan utilitas Tailwind CSS langsung di template.
+- **Ringan & Cepat**: Tidak bergantung pada library berat—hanya menggunakan set ikon Tabler Icons sebagai dependensi opsional.
+- **Aksesibilitas Terjaga**: Mendukung efek `hover`, `focus`, dan indikator `disabled` secara konsisten di semua komponen.
+
+---
+
+## 🚀 Instalasi
+
+```bash
+npm install @rizwangustama/exp-library-ui
+```
+
+### Persiapan Dependensi
+
+**1. Install Tabler Icons & Tailwind CSS (jika belum ada):**
+```bash
+npm install @tabler/icons-webfont tailwindcss
+```
+
+**2. Tambahkan ke file global styles aplikasi Anda (`styles.css`):**
+```css
+/* Import Tabler Icons */
+@import '@tabler/icons-webfont/dist/tabler-icons.min.css';
+
+/* Import Tailwind CSS */
+@import 'tailwindcss';
+
+/* Agar Tailwind dapat memindai style dari library ini */
+@source '../node_modules/@rizwangustama/exp-library-ui';
+```
+
+---
 
 ## 📦 Komponen Tersedia
 
-Saat ini, `exp-library-ui` menyediakan komponen-komponen berikut:
-
-1. **ExpButton** (`<exp-button>`) - Tombol dengan dukungan berbagai varian (`primary`, `secondary`, `danger`, `ghost`) dan ukuran (`sm`, `md`, `lg`).
-2. **ExpInput** (`<exp-input>`) - Input teks standar dengan dukungan tipe `text`, `email`, `password`, `number`, serta dapat disisipkan *icon* di sisi kiri atau kanan.
-3. **ExpCheckbox** (`<exp-checkbox>`) - Kotak centang dengan kemudahan *two-way binding*.
-4. **ExpRadio** (`<exp-radio>`) - Tombol pilihan untuk memilih satu opsi di dalam grup.
-5. **ExpSelect** (`<exp-select>`) - *Dropdown* canggih dengan fitur pencarian (*searchable*), multi-pilihan (*multi-select*), dan *template* kustom (menerima `ng-template`).
-6. **ExpTable** (`<exp-table>`) - Tabel data dinamis yang sederhana dan modern.
-7. **ExpIcon** (`<exp-icon>`) - Pembungkus ikon fleksibel menggunakan `@tabler/icons-webfont` yang ukurannya dapat diubah-ubah sesuka hati.
-
----
-
-## 🚀 Instalasi & Persiapan
-
-Pastikan Anda sudah menginstal Tailwind CSS v4 dan Tabler Icons di proyek aplikasi Angular Anda.
-
-1. **Install Tabler Icons** (jika belum):
-   ```bash
-   npm install @tabler/icons-webfont
-   ```
-
-2. **Tambahkan ke Global Styles** (`styles.css` atau `styles.scss` aplikasi Anda):
-   ```css
-   @import '@tabler/icons-webfont/tabler-icons.min.css';
-   @import 'tailwindcss';
-   
-   /* Pastikan Tailwind dapat memindai folder library ini */
-   @source '../../exp-library-ui'; 
-   ```
+| Komponen | Selector | Deskripsi |
+|---|---|---|
+| **ExpButton** | `<exp-button>` | Tombol dengan berbagai varian (`primary`, `secondary`, `danger`, `ghost`) dan ukuran (`sm`, `md`, `lg`) |
+| **ExpInput** | `<exp-input>` | Input teks dengan dukungan tipe `text`, `email`, `password`, `number`, serta ikon di kiri/kanan |
+| **ExpCheckbox** | `<exp-checkbox>` | Kotak centang dengan *two-way binding* |
+| **ExpRadio** | `<exp-radio>` | Tombol pilihan dalam satu grup |
+| **ExpSelect** | `<exp-select>` | Dropdown canggih: *searchable*, *multi-select*, dan kustom `ng-template` |
+| **ExpTable** | `<exp-table>` | Tabel data dinamis yang sederhana dan modern |
+| **ExpIcon** | `<exp-icon>` | Wrapper ikon Tabler Icons dengan ukuran yang dapat dikustomisasi |
 
 ---
 
-## 💻 Panduan Penggunaan (Contoh)
+## 💻 Panduan Penggunaan
 
-Karena library ini dibangun untuk Angular versi modern, Anda dapat langsung mengimpor komponen yang dibutuhkan ke dalam modul atau komponen *standalone* Anda.
+Import komponen yang dibutuhkan langsung di komponen *standalone* Anda:
 
-### 1. Button
-```html
-<exp-button variant="primary" size="lg">Simpan Data</exp-button>
+```typescript
+import { ExpButton, ExpInput, ExpSelect } from '@rizwangustama/exp-library-ui';
+
+@Component({
+  imports: [ExpButton, ExpInput, ExpSelect],
+  ...
+})
+export class MyComponent {}
 ```
 
-### 2. Input (dengan Icon)
+### Button
+
+```html
+<exp-button variant="primary" size="lg">Simpan Data</exp-button>
+<exp-button variant="secondary" size="md">Batal</exp-button>
+<exp-button variant="danger" size="sm">Hapus</exp-button>
+<exp-button variant="ghost">Selengkapnya</exp-button>
+```
+
+### Input (dengan Icon)
+
 ```html
 <exp-input type="email" placeholder="Alamat Email" iconPosition="left">
-  <!-- Sisipkan atribut "icon" pada elemen ikon Anda -->
   <exp-icon icon name="mail" size="lg"></exp-icon>
+</exp-input>
+
+<exp-input type="password" placeholder="Kata Sandi" iconPosition="right">
+  <exp-icon icon name="lock" size="lg"></exp-icon>
 </exp-input>
 ```
 
-### 3. Checkbox & Radio
+### Checkbox & Radio
+
 ```html
-<exp-checkbox [(checked)]="isAgreed">Saya setuju</exp-checkbox>
+<exp-checkbox [(checked)]="isAgreed">Saya setuju dengan syarat & ketentuan</exp-checkbox>
 
 <exp-radio name="gender" value="pria" [(selectedValue)]="gender">Pria</exp-radio>
 <exp-radio name="gender" value="wanita" [(selectedValue)]="gender">Wanita</exp-radio>
 ```
 
-### 4. Select (Multi-select & Searchable)
+### Select (Multi-select & Searchable)
+
 ```html
-<exp-select 
-  [options]="cityList" 
-  bindLabel="name" 
-  bindValue="id" 
+<exp-select
+  [options]="cityList"
+  bindLabel="name"
+  bindValue="id"
   [searchable]="true"
   [multiple]="true"
   placeholder="Pilih Kota..."
@@ -89,34 +130,65 @@ Karena library ini dibangun untuk Angular versi modern, Anda dapat langsung meng
 </exp-select>
 ```
 
-### 5. Table
+### Table
+
 ```typescript
 // Di dalam class komponen
 columns = [
   { field: 'id', header: 'ID' },
-  { field: 'name', header: 'Nama Lengkap' }
+  { field: 'name', header: 'Nama Lengkap' },
+  { field: 'email', header: 'Email' },
 ];
 data = [
-  { id: 1, name: 'Budi Santoso' },
-  { id: 2, name: 'Siti Aminah' }
+  { id: 1, name: 'Budi Santoso', email: 'budi@example.com' },
+  { id: 2, name: 'Siti Aminah', email: 'siti@example.com' },
 ];
 ```
 ```html
-<!-- Di dalam template -->
 <exp-table [columns]="columns" [data]="data"></exp-table>
 ```
 
-### 6. Icon
-Mendukung ukuran standar (`xs` hingga `5xl`) maupun ukuran kustom dari Tailwind.
+### Icon
+
+Mendukung ukuran standar (`xs`, `sm`, `md`, `lg`, `xl`, `2xl`, `3xl`, `4xl`, `5xl`) maupun kelas Tailwind kustom.
+
 ```html
 <exp-icon name="home" size="3xl" class="text-blue-500"></exp-icon>
+<exp-icon name="user" size="xl"></exp-icon>
+<exp-icon name="settings" size="md"></exp-icon>
 ```
 
 ---
 
-## 🛠️ Pengembangan
-Untuk mengembangkan library ini, jalankan perintah berikut di workspace Anda:
+## 🛠️ Pengembangan Library
+
+Clone repository dan instal dependensi:
+```bash
+git clone https://github.com/rizwangustama/exp-library-ui.git
+cd exp-library-ui
+npm install
+```
+
+Jalankan build library dalam mode *watch* (perubahan otomatis ter-rebuild):
 ```bash
 ng build exp-library-ui --watch
 ```
-Lalu uji perubahannya melalui proyek pengujian Anda (misalnya `showcase-app`).
+
+Uji perubahan melalui aplikasi *showcase*:
+```bash
+ng serve showcase-app
+```
+
+Jalankan unit test:
+```bash
+ng test
+```
+
+---
+
+## 🔗 Tautan
+
+- [NPM Package](https://www.npmjs.com/package/@rizwangustama/exp-library-ui)
+- [GitHub Repository](https://github.com/rizwangustama/exp-library-ui)
+- [Tabler Icons](https://tabler.io/icons)
+- [Angular Documentation](https://angular.dev)

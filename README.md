@@ -1,59 +1,105 @@
-# UiWorkspace
+# EXP Library UI — Angular Component Library
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 22.1.5.
+<p align="center">
+  <img src="./projects/exp-library-ui/logo.png" alt="EXP Library UI Logo" width="200"/>
+</p>
 
-## Development server
+<p align="center">
+  <a href="https://www.npmjs.com/package/@rizwangustama/exp-library-ui">
+    <img src="https://img.shields.io/npm/v/@rizwangustama/exp-library-ui.svg" alt="NPM Version"/>
+  </a>
+  <a href="https://github.com/rizwangustama/exp-library-ui/actions/workflows/ci.yml">
+    <img src="https://github.com/rizwangustama/exp-library-ui/actions/workflows/ci.yml/badge.svg" alt="CI Status"/>
+  </a>
+  <a href="https://www.npmjs.com/package/@rizwangustama/exp-library-ui">
+    <img src="https://img.shields.io/npm/l/@rizwangustama/exp-library-ui.svg" alt="License"/>
+  </a>
+</p>
 
-To start a local development server, run:
+<p align="center">
+  Library komponen UI modern, fleksibel, dan responsif untuk <b>Angular</b>, ditenagai <b>Tailwind CSS v4</b> dan <b>Tabler Icons</b>.
+</p>
 
-```bash
-ng serve
+---
+
+## 📁 Struktur Monorepo
+
+```
+ui-workspace/
+├── projects/
+│   ├── exp-library-ui/      # 📦 Library komponen utama (di-publish ke NPM)
+│   └── showcase-app/        # 🖥️  Aplikasi demo & testing
+├── .github/workflows/
+│   ├── ci.yml               # ✅ CI: Build & Test (setiap push ke main)
+│   └── publish-npm.yml      # 🚀 Publish ke NPM (setiap Release di GitHub)
+└── dist/
+    └── exp-library-ui/      # Output build library
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+---
 
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+## 🚀 Instalasi
 
 ```bash
-ng generate component component-name
+npm install @rizwangustama/exp-library-ui
 ```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
+Pastikan sudah menginstal dependensi peer-nya:
 ```bash
-ng generate --help
+npm install @tabler/icons-webfont tailwindcss
 ```
 
-## Building
+Tambahkan ke file global styles (`styles.css`):
+```css
+@import '@tabler/icons-webfont/dist/tabler-icons.min.css';
+@import 'tailwindcss';
+```
 
-To build the project run:
+---
 
+## 📦 Komponen Tersedia
+
+| Komponen | Selector | Deskripsi |
+|---|---|---|
+| **ExpButton** | `<exp-button>` | Tombol dengan varian & ukuran |
+| **ExpInput** | `<exp-input>` | Input teks dengan dukungan ikon |
+| **ExpCheckbox** | `<exp-checkbox>` | Kotak centang dengan two-way binding |
+| **ExpRadio** | `<exp-radio>` | Tombol pilihan dalam grup |
+| **ExpSelect** | `<exp-select>` | Dropdown dengan fitur search & multi-select |
+| **ExpTable** | `<exp-table>` | Tabel data dinamis |
+| **ExpIcon** | `<exp-icon>` | Wrapper ikon Tabler Icons |
+
+---
+
+## 🛠️ Pengembangan Lokal
+
+**Jalankan showcase app:**
 ```bash
-ng build
+ng serve showcase-app
 ```
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+**Build library (mode watch):**
+```bash
+ng build exp-library-ui --watch
+```
 
-## Running unit tests
-
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
-
+**Jalankan unit test:**
 ```bash
 ng test
 ```
 
-## Running end-to-end tests
+---
 
-For end-to-end (e2e) testing, run:
+## 🔄 Alur Rilis (CI/CD)
 
-```bash
-ng e2e
-```
+1. Kerjakan kode dan push ke branch `main` → GitHub Actions otomatis menjalankan **build & test**.
+2. Saat siap merilis versi baru, naikkan versi di `projects/exp-library-ui/package.json`.
+3. Buat **Release** baru di GitHub (contoh: `v1.0.0`) → GitHub Actions otomatis mem-**publish ke NPM**.
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+---
 
-## Additional Resources
+## 🔗 Tautan
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+- [NPM Package](https://www.npmjs.com/package/@rizwangustama/exp-library-ui)
+- [GitHub Repository](https://github.com/rizwangustama/exp-library-ui)
+- [Angular Documentation](https://angular.dev)
