@@ -1,6 +1,10 @@
 {
   "name": "@rizwangustama/exp-shared-ui",
-  "version": "1.0.5",
+  "version": "0.0.2",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rizwangustama/exp-library-ui.git"
+  },
   "peerDependencies": {
     "@angular/common": "^22.2.0",
     "@angular/core": "^22.2.0"
