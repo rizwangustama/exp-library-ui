@@ -7,7 +7,7 @@
 <p align="center">
   Library komponen UI modern, fleksibel, dan responsif untuk ekosistem <b>Angular</b>,
   ditenagai <b>Tailwind CSS v4</b> dan <b>Tabler Icons</b>.
-</p>
+</p>  
 
 <p align="center">
   <a href="https://www.npmjs.com/package/@rizwangustama/exp-library-ui">
