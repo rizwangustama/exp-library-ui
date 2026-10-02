@@ -4,7 +4,7 @@
   "compileOnSave": false,
   "compilerOptions": {
     "paths": {
-      "exp-shared-ui": ["./dist/exp-shared-ui"]
+      "exp-shared-ui": ["./projects/exp-shared-ui/src/public-api.ts"]
     },
     "noImplicitOverride": true,
     "noPropertyAccessFromIndexSignature": true,
