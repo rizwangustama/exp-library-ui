@@ -1,5 +1,5 @@
 {
-  "name": "exp-shared-ui",
+  "name": "@rizwangustama/exp-shared-ui",
   "version": "0.0.1",
   "peerDependencies": {
     "@angular/common": "^22.2.0",
